@@ -12,6 +12,8 @@ This project is developed and tested with Python 3.6 using pycharm on Ubuntu 18.
 
 # ############# import libraries
 # General Modules
+import numpy as np
+from datetime import datetime
 
 
 def main():
@@ -22,7 +24,10 @@ def main():
         print(line.strip())
         parts = line.rstrip().split('|')
         date = parts[0]
-        value = parts[1]
+        value_float = np.float16(parts[1])
+        parser_year, parser_month, parser_day = datetime.strptime(date, "%Y-%m-%d").year,\
+                                                datetime.strptime(date, "%Y-%m-%d").month,\
+                                                datetime.strptime(date, "%Y-%m-%d").day
 
     pass
 
